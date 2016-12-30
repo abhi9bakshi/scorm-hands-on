@@ -29,14 +29,14 @@ Golf
 	-Module(s)
 		-module.html
 		-questions.js
-    -image.jpg
+    		-image.jpg
 	-Shared
 		-assessmenttemplate.html
-    -launchpage.html
+    		-launchpage.html
 		-contentfunctions.js
-    -scormfunctions.js
-    -style.css
-    -image.jpg
+    		-scormfunctions.js
+    		-style.css
+    		-image.jpg
 	adlcp_rootv1p2.xsd
 	ims_xml.xsd
 	imscp_rootv1p1p2.xsd
