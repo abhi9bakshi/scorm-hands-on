@@ -1,6 +1,6 @@
 #SCORM (Sharable Content Object Reference Model)
 
-SCORM is a standard for creating E-learning software products. You can find details about it's history and purpose scattered all over the (internet)[https://www.google.com/search?q=scorm] so I won't bore you with that. If you have arrived here, I assume that you have already read a lot and now you want to implement. So, without further ado, let's get started.
+SCORM is a standard for creating E-learning software products. You can find details about it's history and purpose scattered all over the [internet](https://www.google.com/search?q=scorm) so I won't bore you with that. If you have arrived here, I assume that you have already read a lot and now you want to implement. So, without further ado, let's get started.
 
 
 ##Things you will need
