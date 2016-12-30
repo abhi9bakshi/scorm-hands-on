@@ -26,22 +26,22 @@ Now that you got a working course, it's time to get a deeper understanding of it
 
 ```
 Golf
-	-Module(s)
-		-module.html
-		-questions.js
-    		-image.jpg
-	-Shared
-		-assessmenttemplate.html
-    		-launchpage.html
-		-contentfunctions.js
-    		-scormfunctions.js
-    		-style.css
-    		-image.jpg
-	adlcp_rootv1p2.xsd
-	ims_xml.xsd
-	imscp_rootv1p1p2.xsd
-	imsmanifest.xml
-	imsmd_rootv1p2p1.xsd
+--Module(s)
+----module.html
+----questions.js
+----image.jpg
+--Shared
+----assessmenttemplate.html
+----launchpage.html
+----contentfunctions.js
+----scormfunctions.js
+----style.css
+----image.jpg
+--adlcp_rootv1p2.xsd
+--ims_xml.xsd
+--imscp_rootv1p1p2.xsd
+--imsmanifest.xml
+--imsmd_rootv1p2p1.xsd
   ```
   
   
