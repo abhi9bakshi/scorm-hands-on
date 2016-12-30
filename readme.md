@@ -31,8 +31,7 @@ Golf
 ----questions.js
 ----image.jpg
 --Shared
-----assessmenttemplate.html
-----launchpage.html
+----page.html
 ----contentfunctions.js
 ----scormfunctions.js
 ----style.css
