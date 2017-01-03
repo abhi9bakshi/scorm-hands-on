@@ -102,14 +102,20 @@ Let's take a look at one of these pages to see what goes in there. Jump to _Play
 
 #####playing.html
 
+As is evident, this page comprises of mostly plain HTML. Since that is rendered as-is by the browser, let's take a look at the non-html content. 
 
+Lines 5-7 import the stylesheet. The javascript sourced by line 9_(contentfunctions.js)_ contains HTML which is injected using line 21 & 22 on the page. 
 
-If you go back to _launchpage.html_ and check line 63, you can see the URL is for _assessmenttemplate.html_, which, in the Golf example, is the Quiz. 
+From what I can see, I find line 8_(scormfunctions.js)_ to be redundant, since it was already loaded in _launchpage.html_ and no scorm calls have been done from this page, but, I may be wrong.
+
+So, basically all this page is, is plain HTML. All SCORM calls is still being made by _launchpage.html_.
+
+But, there's one page, where things get different. If you go back to _launchpage.html_ and check line 63, you can see the URL is for _assessmenttemplate.html_, which, in the Golf example, is the Quiz. 
 ```javascript
 pageArray[14] = "shared/assessmenttemplate.html?questions=Playing&questions=Etiquette&questions=Handicapping&questions=HavingFun";
 ```
 
-Also, you can see 4 arguements passed as single string the same GET request:
+Also, you can see 4 arguements passed as string in the same GET request:
 
 1. questions=Playing
 2. questions=Etiquette
