@@ -73,3 +73,16 @@ Once you open **launchpage.html**, you will see a lot of javascript code. Skippi
   * Previous
   * Next
   * Exit
+
+
+At line 318, you can see, when this page loads, it calls the **doStart** function, located at line 74, which does the necessary initialization. Once the initialization is done, you navigate through the course by pressing the next and previous buttons which in turn calls **next**(line 177) and **previous**(line 170) functions. Both of these functions call function **goToPage**. If you skip the code for disabling buttons, you can see that dynamic loading of content is done using the following code:
+
+```
+ //save the current location as the bookmark
+ScormProcessSetValue("cmi.core.lesson_location", currentPage);
+
+//in this sample course, the course is considered complete when the last page is reached
+if (currentPage == (pageArray.length - 1)){
+    reachedEnd = true;
+    ScormProcessSetValue("cmi.core.lesson_status", "completed");
+```
