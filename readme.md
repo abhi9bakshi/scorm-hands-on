@@ -45,3 +45,6 @@ Golf
   
   
   So, the first question which comes to your mind is, **What are these files**.
+  
+  ![Components of SCORM content](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png
+)
