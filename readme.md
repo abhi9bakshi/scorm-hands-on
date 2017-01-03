@@ -28,26 +28,27 @@ Now that you got a working course, it's time to get a deeper understanding of it
 
 ```
 Golf
---Module(s)
-----module.html
-----questions.js
-----image.jpg
---Shared
-----page.html
-----contentfunctions.js
-----scormfunctions.js
-----style.css
-----image.jpg
---adlcp_rootv1p2.xsd
---ims_xml.xsd
---imscp_rootv1p1p2.xsd
---imsmanifest.xml
---imsmd_rootv1p2p1.xsd
+├─Module(s)
+| ├─module.html
+| ├─questions.js
+| └─image.jpg
+├─Shared
+| ├─page.html
+| ├─contentfunctions.js
+| ├─scormfunctions.js
+| ├─style.css
+| └─image.jpg
+├─adlcp_rootv1p2.xsd
+├─ims_xml.xsd
+├─imscp_rootv1p1p2.xsd
+├─imsmanifest.xml
+└─imsmd_rootv1p2p1.xsd
   ```
   
   
   So, the first question which comes to your mind is, **What are these files**.
-  
+
+#####imsmanifest.xml
   The first and most important file among these is the _**imsmanifest.xml**_. If you open that file, you can see it's structure is similar to image shown below. 
 ![imsmanifest.xml structure](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/imsmanifest%20structure.png
 )
@@ -59,3 +60,16 @@ If you refer to [SCORM user guide for programmers](https://adlnet.gov/wp-content
 
 
 The 4 .xsd files in the root directory are XML schema definition files that define the format of the SCORM manifest file and must be included in every SCORM package. 
+
+
+Now, if you check **line 34** of imsmanifest.xml file, you will see it has an _href_ attribute which points to **shared/launchpage.html**. This is the page which shows up when you launch this course in moodle. So, let's jump right into that page.
+
+#####launchpage.html
+
+Once you open **launchpage.html**, you will see a lot of javascript code. Skipping all that, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
+
+1. Content Frame
+2. Nav Div
+  * Previous
+  * Next
+  * Exit
