@@ -125,3 +125,7 @@ Also, you can see 4 arguements passed as string in the same GET request:
 Now, let's jump to _assessmenttemplate.html_ to see how the quiz is handled.
 
 #####assessmenttemplate.html
+
+Upon opening the page, you see many lines of javascript. Skipping all that, jump directly to body section(line 193). There you can see two functions, **RenderTest** and **AddTagLine**. The function **AddTagLine** simply injects a line from _contentfunctions.js_. 
+
+Let's seehow **RenderTest** function works. 
