@@ -62,7 +62,7 @@ If you refer to [SCORM user guide for programmers](https://adlnet.gov/wp-content
 The 4 .xsd files in the root directory are XML schema definition files that define the format of the SCORM manifest file and must be included in every SCORM package. 
 
 
-Now, if you check **line 34** of imsmanifest.xml file, you will see it has an _href_ attribute which points to **shared/launchpage.html**. This is the page which shows up when you launch this course in moodle. So, let's jump right into that page.
+Now, if you check **line 34** of _imsmanifest.xml_ file, you will see it has an _href_ attribute which points to _shared/launchpage.html_. This is the page which shows up when you launch this course in moodle. So, let's jump right into that page.
 
 #####launchpage.html
 
@@ -77,7 +77,7 @@ Once you open **launchpage.html**, you will see a lot of javascript code. Skippi
 
 At line 318, you can see, when this page loads, it calls the **doStart** function, located at line 74, which does the necessary initialization. Once the initialization is done, you navigate through the course by pressing the next and previous buttons which in turn calls **next**(line 177) and **previous**(line 170) functions. Both of these functions call function **goToPage**(line 113). If you skip the code for disabling buttons, you can see that your progress is being tracked even when you are navigating through the course using the following code:
 
-```
+```javascript
  //save the current location as the bookmark
 ScormProcessSetValue("cmi.core.lesson_location", currentPage);
 
@@ -90,9 +90,32 @@ if (currentPage == (pageArray.length - 1)){
 You can refer [SCORM 1.2 Run Time Environment manual](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_1.2_RunTimeEnv.pdf) to know more about **cmi.core.lesson_location**(page 30) and **cmi.core.lesson_status**(page 32).
 
 
-So, now you know, at least on a basic level, how the tracking is done. But, how are the pages loaded dynamically? Well, in this case, if you refer to launchpage.html line 47, you will see a **pageArray** with 15 elements, each, a relative URL to a page. If you jump to line 120, you can see this same array is used to source content to content frame.
+So, now you know, at least on a basic level, how the tracking is done. But, how are the pages loaded dynamically? Well, in this case, if you refer to launchpage.html line 47, you will see a **pageArray** with 15 elements, each being a relative URL to a page. If you jump to line 120, you can see this same array is used to source content to content frame.
 
-```
+```javascript
 //navigate the iFrame to the content
 theIframe.src = "../" + pageArray[currentPage];
 ```
+
+
+Let's take a look at one of these pages to see what goes in there. Jump to _Playing/Playing.html_ page.
+
+#####playing.html
+
+
+
+If you go back to _launchpage.html_ and check line 63, you can see the URL is for _assessmenttemplate.html_, which, in the Golf example, is the Quiz. 
+```javascript
+pageArray[14] = "shared/assessmenttemplate.html?questions=Playing&questions=Etiquette&questions=Handicapping&questions=HavingFun";
+```
+
+Also, you can see 4 arguements passed as single string the same GET request:
+
+1. questions=Playing
+2. questions=Etiquette
+3. questions=Handicapping
+4. questions=HavingFun
+
+Now, let's jump to _assessmenttemplate.html_ to see how the quiz is handled.
+
+#####assessmenttemplate.html
