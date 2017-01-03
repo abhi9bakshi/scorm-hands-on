@@ -47,7 +47,7 @@ Golf
   So, the first question which comes to your mind is, **What are these files**.
   
   The first and most important file among these is the _imsmanifest.xml_. If you open that file, you can see it's structure is similar to image shown below. 
-![imsmanifest.xml structure](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png
+![imsmanifest.xml structure](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/imsmanifest%20structure.png
 )
   
   ![Components of SCORM content](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png
