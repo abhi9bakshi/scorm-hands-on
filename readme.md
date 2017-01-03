@@ -88,3 +88,11 @@ if (currentPage == (pageArray.length - 1)){
 ```
 
 You can refer [SCORM 1.2 Run Time Environment manual](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_1.2_RunTimeEnv.pdf) to know more about **cmi.core.lesson_location**(page 30) and **cmi.core.lesson_status**(page 32).
+
+
+So, now you know, at least on a basic level, how the tracking is done. But, how are the pages loaded dynamically? Well, in this case, if you refer to launchpage.html line 47, you will see a **pageArray** with 15 elements, each, a relative URL to a page. If you jump to line 120, you can see this same array is used to source content to content frame.
+
+```
+//navigate the iFrame to the content
+theIframe.src = "../" + pageArray[currentPage];
+```
