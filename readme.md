@@ -316,7 +316,7 @@ Open the _launchpage.html_ file in golf course. If you look at the flow of execu
 
 **body onload**(line 318) --> **doStart**(line 74) --> **ScormProcessInitialize**(line 83)
 
-Now, **ScormProcessInitialize** function is defined in _scormfunctions.js_. But, before we jump to _scormfunctions.js_, let's take a look at [SCORM Run Time Environment](http://scorm.com/scorm-explained/technical-scorm/run-time/). If you check that article, you will find that SCORM 1.1/1.2 has 8 API calls, viz.
+Now, **ScormProcessInitialize** function is defined in _scormfunctions.js_. But, before we jump to _scormfunctions.js_, let's take a look at [SCORM Run Time Environment manual](http://scorm.com/scorm-explained/technical-scorm/run-time/). If you check that article, you will find that SCORM 1.1/1.2 has 8 API calls, viz.
 
 ```
 LMSInitialize( “” ) : bool
@@ -358,3 +358,45 @@ to get error information in case of an error in initialization.
 **Line 121**
 
 Once everything is successfully executed in **ScormProcessInitialize** function, we set the variable **initialized** to _true_.
+
+
+#####launchpage.html
+
+Upon successful initialization, we proceed to 
+
+**Line 87**
+
+where we try to fetch lesson status by calling function **ScormProcessGetValue**.
+
+
+#####scormfunctions.js
+
+The code execution flow proceeds to 
+
+**Line 157**
+
+where, upon successful check for LMS connection, we use SCORM API call
+
+```
+LMSGetValue( element : CMIElement ) : string
+```
+to fetch lesson status.
+
+
+#####launchpage.html
+
+Upon successfully fetching lesson status, the control returns to _launchpage.html_ 
+
+**Line 88**
+
+where, it checks if the lesson status is `"not attempted"`. Now, if you refer to [SCORM Run Time Environment manual](http://scorm.com/scorm-explained/technical-scorm/run-time/) page 67, you will get a list of data model elements and their possible values. The values possible for `cmi.core.lesson_status` are
+
+* passed
+* completed
+* failed
+* incomplete
+* browsed
+* not attempted
+
+
+Now, 
