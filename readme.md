@@ -126,6 +126,51 @@ Now, let's jump to _assessmenttemplate.html_ to see how the quiz is handled.
 
 #####assessmenttemplate.html
 
-Upon opening the page, you see many lines of javascript. Skipping all that, jump directly to body section(line 193). There you can see two functions, **RenderTest** and **AddTagLine**. The function **AddTagLine** simply injects a line from _contentfunctions.js_. 
+Upon opening the page, you see many lines of javascript. Skipping all that, jump directly to body section(line 193). There you can see two functions, **RenderTest** and **AddTagLine**. The function **AddTagLine** simply injects a line from _contentfunctions.js_. Let's seehow **RenderTest** function works. 
 
-Let's seehow **RenderTest** function works. 
+
+if you have dealt with _Spaghetti Code_ earlier, you will feel right at home here. But trust me, we can get through it if we take it in one piece at a time. In order to understand **RenderTest** function, you must know first what happens during the initialization. So, let's get started:
+
+**Line 35 - Line 39**
+This code is executed as soon as the page loads. What it does is takes in the arguements passed in Line 63 of _launchpage.html_ and breaks it down into an array of string. So the result is as follows:
+
+Input:
+```
+shared/assessmenttemplate.html?questions=Playing&questions=Etiquette&questions=Handicapping&questions=HavingFun
+```
+
+Output:
+```
+includeFiles[0] = "Playing"
+includeFiles[1] = "Etiquette"
+includeFiles[2] = "Handicapping"
+includeFIles[3] = "HavingFun"
+```
+
+**Line 40**
+If you check your directory structure, you can see that each of the 4 directories, viz.
+
+* Playing
+* Etiquette
+* Handicapping
+* HavingFun
+
+have a file called _questions.js_.
+
+So, what this line does is that it takes names of these directories from the includeFiles array and appends them as a script to original document.
+
+Input
+```
+includeFiles[0] = "Playing"
+includeFiles[1] = "Etiquette"
+includeFiles[2] = "Handicapping"
+includeFIles[3] = "HavingFun"
+```
+
+Output
+```
+<script src="../Playing/questions.js" type="text/JavaScript"><\/script>
+<script src="../Etiquette/questions.js" type="text/JavaScript"><\/script>
+<script src="../Handicapping/questions.js" type="text/JavaScript"><\/script>
+<script src="../HavingFun/questions.js" type="text/JavaScript"><\/script>
+```
