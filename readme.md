@@ -66,7 +66,10 @@ Now, if you check **line 34** of _imsmanifest.xml_ file, you will see it has an 
 
 #####launchpage.html
 
-Once you open **launchpage.html**, you will see a lot of javascript code. Skipping all the initialization, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
+Once you open **launchpage.html**, you will see a lot of javascript code. The first thing which is done as soon as you start a SCORM course is initialization.
+
+
+Skipping all the initialization, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
 
 1. Content Frame
 2. Nav Div
