@@ -334,6 +334,27 @@ These API calls are used by the SCORM course to communicate with the LMS. We ass
 
 #####scormfunctions.js
 
-**Line 98**
+**Line 98 -  Line 101**
 
 The first thing done during initialization is finding the LMS API for initiating a session. [SCORM RTE](http://scorm.com/scorm-explained/technical-scorm/run-time/) documentation provides a very good overview of that process. 
+
+
+**Line 108**
+
+This is where we try to initiate a connection with the LMS using the SCORM API call `LMSInitialize( "" ) : bool` once the API is found. 
+
+
+**Line 111 - Line 113**
+
+In these lines we use 3 SCORM API calls
+```
+LMSGetLastError() : CMIErrorCode
+LMSGetErrorString( errorCode : CMIErrorCode ) : string
+LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
+```
+to get error information in case of an error in initialization.
+
+
+**Line 121**
+
+Once everything is successfully executed in **ScormProcessInitialize** function, we set the variable **initialized** to _true_.
