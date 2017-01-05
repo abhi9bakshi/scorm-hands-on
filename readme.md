@@ -310,6 +310,30 @@ In the next chapter, we will study how we can use SCORM 1.2 for communicating wi
 In the previous chapter, we saw 6 SCORM calls. But, did you realize we never tried to trace these calls. In fact, we skipped the initialization part at the beginning of first chapter. Well, that was intentional to avoid confusion. The purpose of Chapter 1 was to understand the structure of a SCORM course and not how it communicates with LMS. But now that we have a solid understanding of the structure, we are ready to dig into the nitty gritty details of working with SCORM. So, let's get started.
 
 
-**launchpage.html**
+#####launchpage.html
 
-Open the _launchpage.html_ file in golf course. In **line 318**, when the page loads, **doStart** function is called. 
+Open the _launchpage.html_ file in golf course. If you look at the flow of execution, it proceeds as follows:
+
+**body onload**(line 318) --> **doStart**(line 74) --> **ScormProcessInitialize**(line 83)
+
+Now, **ScormProcessInitialize** function is defined in _scormfunctions.js_. But, before we jump to _scormfunctions.js_, let's take a look at [SCORM Run Time Environment](http://scorm.com/scorm-explained/technical-scorm/run-time/). If you check that article, you will find that SCORM 1.1/1.2 has 8 API calls, viz.
+
+```
+LMSInitialize( “” ) : bool
+LMSFinish( “” ) : bool
+LMSGetValue( element : CMIElement ) : string
+LMSSetValue( element : CMIElement, value : string) : string
+LMSCommit( “” ) : bool
+LMSGetLastError() : CMIErrorCode
+LMSGetErrorString( errorCode : CMIErrorCode ) : string
+LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
+```
+
+These API calls are used by the SCORM course to communicate with the LMS. We assume that you have already read articles on Content Packaging, Run-Time, and Sequencing at [SCORM](http://scorm.com/scorm-explained/technical-scorm/) website so we won't go into the details for that. So, taking these 8 API calls into consideration, let's jump to **ScormProcessInitialize** function in _scormfunctions.js_.
+
+
+#####scormfunctions.js
+
+**Line 98**
+
+The first thing done during initialization is finding the LMS API for initiating a session. [SCORM RTE](http://scorm.com/scorm-explained/technical-scorm/run-time/) documentation provides a very good overview of that process. 
