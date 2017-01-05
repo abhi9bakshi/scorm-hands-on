@@ -5,6 +5,8 @@ SCORM is a standard for creating E-learning software products. You can find deta
 
 ##Chapter 1: Let's play Golf
 
+This chapter focuses on getting a solid understanding of the structure of a SCORM course. If you are already familiar with the structure, or you want to directly learn how a SCORM course communicates with LMS, you can jump to Chapter 2. I will recommend sticking through this chapter if you are new to SCORM.
+
 ###Things you will need
 
 Since I am using windows right now, I will write this tutorial for windows OS using SCORM v1.2, but, with just a little bit of google search, you can implement the same in Linux.
@@ -288,7 +290,7 @@ In this example, however, developers have not implemented the **RecordQuestions*
 
 ###Summing Up
 
-In this chapter, we studied the structure defined by SCORM for creating SCORM content. We saw 6 scorm calls 
+In this chapter, we gained a solid understanding of the structure defined by SCORM for creating SCORM content. We saw 6 scorm calls 
 
 1. cmi.core.lesson_location
 2. cmi.core.lesson_status
@@ -299,4 +301,12 @@ In this chapter, we studied the structure defined by SCORM for creating SCORM co
 
 for tracking course position and score.
 
-In the next chapter, we will study how we can use SCORM 1.2 calls effectively to enhance our course.
+In the next chapter, we will study how we can use SCORM 1.2 for communicating with any LMS.
+
+
+
+##Chapter 2: Hello LMS
+
+In the previous chapter, we saw 6 SCORM calls. But, did you realize we never tried to trace these calls. In fact, we skipped the initialization part at the beginning of first chapter. Well, that was intentional to avoid confusion. The purpose of Chapter 1 was to understand the structure of a SCORM course and not how it communicates with LMS. But now that we have a solid understanding of the structure, we are ready to dig into the nitty gritty details of working with SCORM. So, let's get started.
+
+
