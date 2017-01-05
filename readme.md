@@ -129,7 +129,7 @@ Now, let's jump to _assessmenttemplate.html_ to see how the quiz is handled.
 Upon opening the page, you see many lines of javascript. Skipping all that, jump directly to body section(line 193). There you can see two functions, **RenderTest** and **AddTagLine**. The function **AddTagLine** simply injects a line from _contentfunctions.js_. Let's seehow **RenderTest** function works. 
 
 
-if you have dealt with _Spaghetti Code_ earlier, you will feel right at home here. But trust me, we can get through it if we take it in one piece at a time. In order to understand **RenderTest** function, you must know first what happens during the initialization. So, let's get started:
+If you have dealt with _Spaghetti Code_ earlier, you will feel right at home here. But trust me, we can get through it if we take it in one piece at a time. In order to understand **RenderTest** function, you must know first what happens during the initialization. So, let's get started:
 
 
 **Line 35 - Line 39**
@@ -225,4 +225,29 @@ Questions[0] = new Question ("com.scorm.golfsamples.interactions.etiquette_1",
 
 For each question, the function **Question** is invoved, which creates new Question objects. So, when all _questions.js_ files are done processing, you get an array of questions whose each index is accessible by **Questions** array.
 
+
+
+_Now that the initialization is done, we can proceed to the **RenderTest** function._
+
+
+**Line 142 - Line 188**
+
+This code is pretty much self explanatory. The execution logic is as follows:
+
+```
+Loop through the array of Questions
+| └─Print the question
+├─ Check if question is CHOICE type
+|  └─ Loop through the array of answers
+|    └─ Print all answers
+├─ Check if questionn is TRUE-FALSE type
+|  └─ Print TRUE and FALSE
+└─ Check if question is NUMERIC type
+   └─ Print an input box for getting answer
+```
+
+At the end, it adds a **SubmitAnswers** function on line 186, which when clicked, evaluates the answers. So now that we are done printing all questions, let's jump to **SubmitAnswers** function to see how answers are evaluated.
+
+
+**Line 53 - Line 159**
 
