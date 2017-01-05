@@ -53,7 +53,7 @@ Golf
 ![imsmanifest.xml structure](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/imsmanifest%20structure.png
 )
   
-If you refer to [SCORM user guide for programmers](https://adlnet.gov/wp-content/uploads/2011/12/SCORM_Users_Guide_for_Programmers.pdf), Page 10 - Page 16, you can see that this structure relates to SCORM components as follows:
+If you refer to [SCORM user guide for programmers](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_Users_Guide_for_Programmers.pdf), Page 10 - Page 16, you can see that this structure relates to SCORM components as follows:
  
   ![Components of SCORM content](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png
 )
@@ -281,7 +281,7 @@ Now, if you jump back to _launchpage.html_, at **Line 206**, you can see functio
 3. cmi.core.score.max
 4. cmi.core.lesson_status
 
-where first 3 define the max, min and obtained score, while last one is boolean variable which is set true or false based on the passing criteria.
+where first 3 define the max, min and obtained score, while last one is boolean variable which is set true or false based on the passing criteria. You can read more about them at (SCORM 1.2 Run Time Environment Book)[https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_1.2_RunTimeEnv.pdf] **Page 35 - Page 38**
 
 In this example, however, developers have not implemented the **RecordQuestions** function. So, we are not tracking the results on a per-question granularity.
 
