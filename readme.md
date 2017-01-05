@@ -3,7 +3,7 @@
 SCORM is a standard for creating E-learning software products. You can find details about it's history and purpose scattered all over the [internet](https://www.google.com/search?q=scorm) so I won't bore you with that. If you have arrived here, I assume that you have already read a lot and now you want to implement. If you haven't done that yet, [this](http://scorm.com/scorm-explained/technical-scorm/) is a must read before you proceed further. So, without further ado, let's get started.
 
 
-##Chapter 1: Meet SCORM
+##Chapter 1: Let's play Golf
 
 ###Things you will need
 
@@ -249,5 +249,25 @@ Loop through the array of Questions
 At the end, it adds a **SubmitAnswers** function on line 186, which when clicked, evaluates the answers. So now that we are done printing all questions, let's jump to **SubmitAnswers** function to see how answers are evaluated.
 
 
-**Line 53 - Line 159**
+**Line 59 - Line 106**
+
+This code basically stores two variables for each question, viz.
+
+* correctAnswer
+* learnerResponse
+
+
+**Line 108 - Line 109**
+
+This code checkes if the **learnerResponse** is same as the **correctAnswer**, if yes, increments the **correctCount**.
+
+
+**Line 121 - Line 134**
+
+This code generates a **resultSummary**, which is then displayed to the user once he/she submits the test.
+
+
+**Line 111 - Line 119 and Line 136 - Line 138**
+
+This code is meant to send tracking information to the LMS about **Questions** and **Test** in overall if the LMS asks for it.
 
