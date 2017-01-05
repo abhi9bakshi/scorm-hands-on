@@ -310,3 +310,6 @@ In the next chapter, we will study how we can use SCORM 1.2 for communicating wi
 In the previous chapter, we saw 6 SCORM calls. But, did you realize we never tried to trace these calls. In fact, we skipped the initialization part at the beginning of first chapter. Well, that was intentional to avoid confusion. The purpose of Chapter 1 was to understand the structure of a SCORM course and not how it communicates with LMS. But now that we have a solid understanding of the structure, we are ready to dig into the nitty gritty details of working with SCORM. So, let's get started.
 
 
+**launchpage.html**
+
+Open the _launchpage.html_ file in golf course. In **line 318**, when the page loads, **doStart** function is called. 
