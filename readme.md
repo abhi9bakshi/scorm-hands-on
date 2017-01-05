@@ -66,7 +66,7 @@ Now, if you check **line 34** of _imsmanifest.xml_ file, you will see it has an 
 
 #####launchpage.html
 
-Once you open **launchpage.html**, you will see a lot of javascript code. Skipping all that, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
+Once you open **launchpage.html**, you will see a lot of javascript code. Skipping all the initialization, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
 
 1. Content Frame
 2. Nav Div
@@ -104,9 +104,9 @@ Let's take a look at one of these pages to see what goes in there. Jump to _Play
 
 As is evident, this page comprises of mostly plain HTML. Since that is rendered as-is by the browser, let's take a look at the non-html content. 
 
-Lines 5-7 import the stylesheet. The javascript sourced by line 9_(contentfunctions.js)_ contains HTML which is injected using line 21 & 22 on the page. 
+Lines 5-7 import the stylesheet. The javascript sourced by line 9(_contentfunctions.js_) contains HTML which is injected using line 21 & 22 on the page. 
 
-From what I can see, I find line 8_(scormfunctions.js)_ to be redundant, since it was already loaded in _launchpage.html_ and no scorm calls have been done from this page, but, I may be wrong.
+From what I can see, I find line 8(_scormfunctions.js_) to be redundant, since it was already loaded in _launchpage.html_ and no scorm calls have been done from this page, but, I may be wrong.
 
 So, basically all this page is, is plain HTML. All SCORM calls is still being made by _launchpage.html_.
 
@@ -223,7 +223,7 @@ Questions[0] = new Question ("com.scorm.golfsamples.interactions.etiquette_1",
 
 **Line 14 - Line 21**
 
-For each question, the function **Question** is invoved, which creates new Question objects. So, when all _questions.js_ files are done processing, you get an array of questions whose each index is accessible by **Questions** array.
+For each question, the function **Question** is invoked, which creates new Question objects. So, when all _questions.js_ files are done processing, you get an array of questions whose each index is accessible by **Questions** array.
 
 
 
@@ -269,5 +269,34 @@ This code generates a **resultSummary**, which is then displayed to the user onc
 
 **Line 111 - Line 119 and Line 136 - Line 138**
 
-This code is meant to send tracking information to the LMS about **Questions** and **Test** in overall if the LMS asks for it.
+This code is meant to send tracking information to the LMS about **Questions** and **Test** in overall. Here, you can see, two functions are called, viz. 
 
+* RecordQuestion
+* RecordTest
+
+Now, if you jump back to _launchpage.html_, at **Line 206**, you can see function **RecordTest** which makes 4 SCORM calls, viz.
+
+1. cmi.core.score.raw
+2. cmi.core.score.min
+3. cmi.core.score.max
+4. cmi.core.lesson_status
+
+where first 3 define the max, min and obtained score, while last one is boolean variable which is set true or false based on the passing criteria.
+
+In this example, however, developers have not implemented the **RecordQuestions** function. So, we are not tracking the results on a per-question granularity.
+
+
+###Summing Up
+
+In this chapter, we studied the structure defined by SCORM for creating SCORM content. We saw 6 scorm calls 
+
+1. cmi.core.lesson_location
+2. cmi.core.lesson_status
+3. cmi.core.score.raw
+4. cmi.core.score.min
+5. cmi.core.score.max
+6. cmi.core.lesson_status
+
+for tracking course position and score.
+
+In the next chapter, we will study how we can use SCORM 1.2 calls effectively to enhance our course.
