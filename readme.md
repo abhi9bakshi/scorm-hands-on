@@ -131,7 +131,9 @@ Upon opening the page, you see many lines of javascript. Skipping all that, jump
 
 if you have dealt with _Spaghetti Code_ earlier, you will feel right at home here. But trust me, we can get through it if we take it in one piece at a time. In order to understand **RenderTest** function, you must know first what happens during the initialization. So, let's get started:
 
+
 **Line 35 - Line 39**
+
 This code is executed as soon as the page loads. What it does is takes in the arguements passed in Line 63 of _launchpage.html_ and breaks it down into an array of string. So the result is as follows:
 
 Input:
@@ -147,7 +149,9 @@ includeFiles[2] = "Handicapping"
 includeFIles[3] = "HavingFun"
 ```
 
+
 **Line 40**
+
 If you check your directory structure, you can see that each of the 4 directories, viz.
 
 * Playing
@@ -174,3 +178,51 @@ Output
 <script src="../Handicapping/questions.js" type="text/JavaScript"></script>
 <script src="../HavingFun/questions.js" type="text/JavaScript"></script>
 ```
+
+
+Now, if you check any of the _questions.js_ files, it's structure is 
+
+```javascript
+test.AddQuestion( new Question ("com.scorm.golfsamples.interactions.etiquette_1",
+                                "When another player is attempting a shot, it is best to stand:", 
+                                QUESTION_TYPE_CHOICE,
+                                new Array("On top of his ball", "Directly in his line of fire", "Out of the player's line of sight"),
+                                "Out of the player's line of sight",
+                                "obj_etiquette")
+                );
+```
+
+So, when the questions.js files are added below line 40, they are immediately executed, which calls the function **AddQuestion** at line 26 in _assessmenttemplate.html_.
+
+
+**Line 26 - Line 29**
+
+This code creates a new _Questions_ object for each question in _questions.js_. 
+
+Input
+```javascript
+test.AddQuestion( new Question ("com.scorm.golfsamples.interactions.etiquette_1",
+                                "When another player is attempting a shot, it is best to stand:", 
+                                QUESTION_TYPE_CHOICE,
+                                new Array("On top of his ball", "Directly in his line of fire", "Out of the player's line of sight"),
+                                "Out of the player's line of sight",
+                                "obj_etiquette")
+                );
+```
+
+Output
+```
+Questions[0] = new Question ("com.scorm.golfsamples.interactions.etiquette_1",
+                                "When another player is attempting a shot, it is best to stand:", 
+                                QUESTION_TYPE_CHOICE,
+                                new Array("On top of his ball", "Directly in his line of fire", "Out of the player's line of sight"),
+                                "Out of the player's line of sight",
+                                "obj_etiquette")
+```
+
+
+**Line 14 - Line 21**
+
+For each question, the function **Question** is invoved, which creates new Question objects. So, when all _questions.js_ files are done processing, you get an array of questions whose each index is accessible by **Questions** array.
+
+
