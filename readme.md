@@ -169,8 +169,8 @@ includeFIles[3] = "HavingFun"
 
 Output
 ```
-<script src="../Playing/questions.js" type="text/JavaScript"><\/script>
-<script src="../Etiquette/questions.js" type="text/JavaScript"><\/script>
-<script src="../Handicapping/questions.js" type="text/JavaScript"><\/script>
-<script src="../HavingFun/questions.js" type="text/JavaScript"><\/script>
+<script src="../Playing/questions.js" type="text/JavaScript"></script>
+<script src="../Etiquette/questions.js" type="text/JavaScript"></script>
+<script src="../Handicapping/questions.js" type="text/JavaScript"></script>
+<script src="../HavingFun/questions.js" type="text/JavaScript"></script>
 ```
