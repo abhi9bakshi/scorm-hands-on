@@ -306,6 +306,8 @@ In the next chapter, we will study how we can use SCORM 1.2 for communicating wi
 
 ##Chapter 2: Hello LMS
 
+In this chapter, we will go through the entire code of [SCORM Golf example]([SCORM golf example package](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/scorm_golf/golf.zip) and understand how a SCORM course communicates with the LMS.
+
 In the previous chapter, we saw 6 SCORM calls. But, did you realize we never tried to trace these calls. In fact, we skipped the initialization part at the beginning of first chapter. Well, that was intentional to avoid confusion. The purpose of Chapter 1 was to understand the structure of a SCORM course and not how it communicates with LMS. But now that we have a solid understanding of the structure, we are ready to dig into the nitty gritty details of working with SCORM. So, let's get started.
 
 
@@ -458,3 +460,17 @@ Here, we have completed tracing how the Golf SCORM course communicates with the 
 You can summarize the entire flow by this diagram:
 
 ![Run Time Environment Behaviour](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/runtime%20environment%20behaviour.png)
+
+In the next chapter, we will take a look at developing our first SCORM from (almost) scratch.
+
+
+
+##Chapter 3: Welcome to Reality
+
+Up till now, we have been working on someone else's code, trying to get an understanding of how things work in SCORM. But now, things get real. You have to make a SCORM course and you are going to do that all by yourself. But, if you're going to do it, you better do it right, right? The good news is that it's not that difficult to make one given the amount of quality resources available on the internet. So, without further ado, let's get started.
+
+###Things you will need:
+
+1. [SCORM 1.2 starter kit]()
+2. [SCORM 1.2 API Wrapper]()
+
