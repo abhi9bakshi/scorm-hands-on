@@ -50,7 +50,7 @@ Golf
   
   So, the first question which comes to your mind is, **What are these files**.
 
-#####imsmanifest.xml
+####imsmanifest.xml
   The first and most important file among these is the _**imsmanifest.xml**_. If you open that file, you can see it's structure is similar to image shown below. 
 ![imsmanifest.xml structure](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/imsmanifest%20structure.png
 )
@@ -65,7 +65,7 @@ The 4 .xsd files in the root directory are XML schema definition files that defi
 
 Now, if you check **line 34** of _imsmanifest.xml_ file, you will see it has an _href_ attribute which points to _shared/launchpage.html_. This is the page which shows up when you launch this course in moodle. So, let's jump right into that page.
 
-#####launchpage.html
+####launchpage.html
 
 Once you open **launchpage.html**, you will see a lot of javascript code. Skipping all the initialization, jump directly to body section (line 318). If you look at it's structure, you will realize it's very simple with only a frame and a navigation div.
 
@@ -101,7 +101,7 @@ theIframe.src = "../" + pageArray[currentPage];
 
 Let's take a look at one of these pages to see what goes in there. Jump to _Playing/Playing.html_ page.
 
-#####playing.html
+####playing.html
 
 As is evident, this page comprises of mostly plain HTML. Since that is rendered as-is by the browser, let's take a look at the non-html content. 
 
@@ -125,7 +125,7 @@ Also, you can see 4 arguements passed as string in the same GET request:
 
 Now, let's jump to _assessmenttemplate.html_ to see how the quiz is handled.
 
-#####assessmenttemplate.html
+####assessmenttemplate.html
 
 Upon opening the page, you see many lines of javascript. Skipping all that, jump directly to body section(line 193). There you can see two functions, **RenderTest** and **AddTagLine**. The function **AddTagLine** simply injects a line from _contentfunctions.js_. Let's seehow **RenderTest** function works. 
 
@@ -309,7 +309,7 @@ In the next chapter, we will study how we can use SCORM 1.2 for communicating wi
 In the previous chapter, we saw 6 SCORM calls. But, did you realize we never tried to trace these calls. In fact, we skipped the initialization part at the beginning of first chapter. Well, that was intentional to avoid confusion. The purpose of Chapter 1 was to understand the structure of a SCORM course and not how it communicates with LMS. But now that we have a solid understanding of the structure, we are ready to dig into the nitty gritty details of working with SCORM. So, let's get started.
 
 
-#####launchpage.html
+####launchpage.html
 
 Open the _launchpage.html_ file in golf course. If you look at the flow of execution, it proceeds as follows:
 
@@ -331,7 +331,7 @@ LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
 These API calls are used by the SCORM course to communicate with the LMS. We assume that you have already read articles on Content Packaging, Run-Time, and Sequencing at [SCORM](http://scorm.com/scorm-explained/technical-scorm/) website so we won't go into the details for that. So, taking these 8 API calls into consideration, let's jump to **ScormProcessInitialize** function in _scormfunctions.js_.
 
 
-#####scormfunctions.js
+####scormfunctions.js
 
 **Line 98 -  Line 101**
 
@@ -359,7 +359,7 @@ to get error information in case of an error in initialization.
 Once everything is successfully executed in **ScormProcessInitialize** function, we set the variable **initialized** to _true_.
 
 
-#####launchpage.html
+####launchpage.html
 
 Upon successful initialization, we proceed to 
 
@@ -368,7 +368,7 @@ Upon successful initialization, we proceed to
 where we try to fetch lesson status by calling function **ScormProcessGetValue**.
 
 
-#####scormfunctions.js
+####scormfunctions.js
 
 The code execution flow proceeds to 
 
@@ -382,7 +382,7 @@ LMSGetValue( element : CMIElement ) : string
 to fetch lesson status.
 
 
-#####launchpage.html
+####launchpage.html
 
 Upon successfully fetching lesson status, the control returns to _launchpage.html_ 
 
@@ -399,7 +399,7 @@ where, it checks if the lesson status is `"not attempted"`. Now, if you refer to
 
 Initially when you launch a course, `lesson_status` for each module is set to `not attempted` by the LMS. It is the responsibility of the developer to set it to one of the 5 remaining statuses as per the course requirement. In this case, we set it to `incomplete` using the function **ScormProcessSetValue**.
 
-#####scormfunctions.js
+####scormfunctions.js
 
 The code execution flow proceeds to
 
@@ -432,13 +432,13 @@ LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
 
 the flow of code now proceeds to 
 
-#####launchpage.html
+####launchpage.html
 
 **line 94** where we obtain `lesson_location` from previous session to resume the lesson where the user left it earlier. Now that this process is complete, the user is able to see the entire course and navigate through it. Once the user is done with the course and he/she exits, which calls the function **doUnload** at line 146. 
 
 This function records the time the student spent on the session, and then calls the function **ScormProcessFinish**.
 
-#####scormfunctions.js
+####scormfunctions.js
 
 which gets executed in
 
