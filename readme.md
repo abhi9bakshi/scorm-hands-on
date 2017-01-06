@@ -57,8 +57,7 @@ Golf
   
 If you refer to [SCORM user guide for programmers](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_Users_Guide_for_Programmers.pdf), Page 10 - Page 16, you can see that this structure relates to SCORM components as follows:
  
-  ![Components of SCORM content](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png
-)
+  ![Components of SCORM content](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/Components%20of%20SCORM%20content.png)
 
 
 The 4 .xsd files in the root directory are XML schema definition files that define the format of the SCORM manifest file and must be included in every SCORM package. 
@@ -398,5 +397,64 @@ where, it checks if the lesson status is `"not attempted"`. Now, if you refer to
 * browsed
 * not attempted
 
+Initially when you launch a course, `lesson_status` for each module is set to `not attempted` by the LMS. It is the responsibility of the developer to set it to one of the 5 remaining statuses as per the course requirement. In this case, we set it to `incomplete` using the function **ScormProcessSetValue**.
 
-Now, 
+#####scormfunctions.js
+
+The code execution flow proceeds to
+
+**Line 183**
+
+where, the function **ScormProcessSetValue** accepts two arguements
+
+* element
+* value
+
+and uses the SCORM API call
+
+```
+LMSSetValue( element : CMIElement, value : string) : string
+```
+
+to set the value of `lesson_status` to `incomplete`.
+
+
+**Note:** If you check the list of API calls, you can see that we have already covered 6 of them. viz. 
+
+```
+LMSInitialize( “” ) : bool
+LMSGetValue( element : CMIElement ) : string
+LMSSetValue( element : CMIElement, value : string) : string
+LMSGetLastError() : CMIErrorCode
+LMSGetErrorString( errorCode : CMIErrorCode ) : string
+LMSGetDiagnostic( errocCode : CMIErrorCode ) : string
+```
+
+the flow of code now proceeds to 
+
+#####launchpage.html
+
+**line 94** where we obtain `lesson_location` from previous session to resume the lesson where the user left it earlier. Now that this process is complete, the user is able to see the entire course and navigate through it. Once the user is done with the course and he/she exits, which calls the function **doUnload** at line 146. 
+
+This function records the time the student spent on the session, and then calls the function **ScormProcessFinish**.
+
+#####scormfunctions.js
+
+which gets executed in
+
+**Line 124**
+
+here, we make our 7th SCORM API call, viz.
+
+```
+LMSFinish( “” ) : bool
+```
+
+which tells the LMS that the SCO is done communicating with it. Thus the session terminates and the LMS displays the results supplied by the SCO to the user.
+
+
+Here, we have completed tracing how the Golf SCORM course communicates with the LMS. However, you might have noticed we haven't used the API call `LMSCommit( “” ) : bool` at all. If you take a look at the [SCORM 1.2 Run Time Environment manual](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/resources/books/SCORM_1.2_RunTimeEnv.pdf) page 19, you can see that the sole purpose of `LMSCommit()` API call is to push the data stored at the client upon calling `LMSSetValue()` to the server, which in this case, is the LMS. 
+
+You can summarize the entire flow by this diagram:
+
+![Run Time Environment Behaviour](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/images/runtime%20environment%20behaviour.png)
