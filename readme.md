@@ -471,6 +471,6 @@ Up till now, we have been working on someone else's code, trying to get an under
 
 ###Things you will need:
 
-1. [SCORM 1.2 starter kit]()
-2. [SCORM 1.2 API Wrapper]()
+1. [SCORM 1.2 starter kit](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/scorm_starter_pack/scormstarter.zip)
+2. [SCORM 1.2 API Wrapper](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/scripts/SCORM_12_APIWrapper.js)
 
