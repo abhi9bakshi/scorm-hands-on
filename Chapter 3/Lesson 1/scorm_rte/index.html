@@ -5,15 +5,10 @@
 <title>Zealium - Run Time Environment</title>
 
 <script src="scripts/loadXML.js"></script>
+<script src="scripts/common.js"></script>
 
 <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen">
 <link rel="stylesheet" href="styles/buttons.css" type="text/css" media="screen">
-
-<script>
-	//Set iFrame Source
-	console.log(mKey[0].url);
-	document.getElementById('moduleViewer').src = "../" + mKey[0].url;
-</script>
 
 </head>
 
@@ -21,7 +16,7 @@
 <!-- HEADER div for displaying module name -->
 <div id="header">
 	<p id="module_name">Zealium - Run Time Environment</p>
-	<input type="button" alt="exit" value="" class="buttons exit" id="btnExit">
+	<input type="button" alt="exit" value="" class="buttons exit" id="btnExit" onclick="exit()">
 </div>
 
 <!-- FRAME for displaying course -->
@@ -31,8 +26,8 @@
 
 <!-- FOOTER div for displaying navigation controls -->
 <div id="footer">
-	<input type="button" alt="previous" value="" class="buttons previous" id="btnPrevious">
-	<input type="button" alt="next" value="" class="buttons next" id="btnNext">
+	<input type="button" alt="previous" value="" class="buttons previous" id="btnPrevious" onclick="previous()">
+	<input type="button" alt="next" value="" class="buttons next" id="btnNext" onclick="next()">
 </div>
 
 </body>
