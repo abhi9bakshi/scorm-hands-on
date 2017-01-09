@@ -469,14 +469,14 @@ In the next chapter, we will take a look at developing our first SCORM from (alm
 
 Up till now, we have been working on someone else's code, trying to get an understanding of how things work in SCORM. But now, things get real. You have to make a SCORM course and you are going to do that all by yourself. But, if you're going to do it, you better do it right, right? The good news is that it's not that difficult to make one given the amount of quality resources available on the internet. So, without further ado, let's get started.
 
-
-###Lesson 1: Laying the foundation
-
-####Things you will need:
+###Things you will need:
 
 1. [SCORM 1.2 XML schema definition files](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/chapters/Chapter%203/Lesson%201/scorm_xml_schema_definition.zip) also available at [SCORM website](http://scorm.com/scorm-explained/technical-scorm/content-packaging/xml-schema-definition-files/)
 2. [SCORM 1.2 API Wrapper](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/chapters/Chapter%203/Lesson%201/SCORM_12_APIWrapper.js)
 3. [The evolution of Pikachu demo course](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/chapters/Chapter%203/Lesson%201/the_evolution_of_pikachu.zip)
+
+
+###Lesson 1: Laying the foundation
 
 Download and extract these files in a folder. I assume that your folder structure is as follows:
 ```
@@ -522,3 +522,21 @@ scorm_project
     ├─ imsmanifest.xml
     └─ imsmd_rootv1p2p1.xsd
 ```
+
+If you look at the `SCORM_12_APIWrapper.js` file, you can see that it contains well structured code for 
+
+* Initialize
+* Finish
+* GetValue
+* SetValue
+* Commit
+* GetLastError
+* GetErrorString
+* GetDiagnostic
+
+API calls and also functions to find LMS API. Makes our life easier. 
+
+
+###Lesson 3: The imsmanifest file
+
+This file describes the content package and is a must for every SCORM package. [Link](http://scorm.com/scorm-explained/technical-scorm/content-packaging/manifest-structure/)
