@@ -539,4 +539,43 @@ API calls and also functions to find LMS API. Makes our life easier.
 
 ###Lesson 3: The imsmanifest file
 
-This file describes the content package and is a must for every SCORM package. [Link](http://scorm.com/scorm-explained/technical-scorm/content-packaging/manifest-structure/)
+This file describes the content package and is a must for every SCORM package. It's structure is described at [SCORM website](http://scorm.com/scorm-explained/technical-scorm/content-packaging/manifest-structure/). Open `imsmanifest.xml` file and edit lines **21, 23, 28 and 29** to this
+
+```
+<?xml version="1.0" ?>
+<!-- 
+Manifest template to demonstrate the proper XML namespace declarations for
+SCORM 1.2 manifests. 
+
+Provided by Rustici Software - www.scorm.com.
+-->
+<manifest identifier="com.scorm.manifesttemplates.scorm12" version="1"
+       xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+       xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                           http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                           http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+	</metadata>
+	<organizations default="B0">
+		<organization identifier="B0">
+			<title>The Evolution of Pikachu</title> 
+			<item identifier="i1" identifierref="r1" isvisible="true">
+				<title>The Evolution of Pikachu</title> 
+			</item>
+		</organization>
+	</organizations>
+	<resources>
+		<resource identifier="r1" type="webcontent" adlcp:scormtype="sco" href="scorm_rte/index.html">
+			<file href="scorm_rte/index.html" />
+		</resource>
+	</resources>
+</manifest>
+```
+
+
+###lesson 4: Initialize and Finish a Session
+
