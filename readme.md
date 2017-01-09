@@ -474,8 +474,8 @@ Up till now, we have been working on someone else's code, trying to get an under
 
 ####Things you will need:
 
-1. [SCORM 1.2 XML schema definition files](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/scorm_starter_pack/scormstarter.zip) also available at [SCORM website](http://scorm.com/scorm-explained/technical-scorm/content-packaging/xml-schema-definition-files/)
-2. [SCORM 1.2 API Wrapper](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/resources/scripts/SCORM_12_APIWrapper.js)
-3. [The evolution of Pikachu demo course](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/scorm_starter_pack/scormstarter.zip)
+1. [SCORM 1.2 XML schema definition files](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/chapters/Chapter%203/Lesson%201/scorms_xml_schema_definition.zip) also available at [SCORM website](http://scorm.com/scorm-explained/technical-scorm/content-packaging/xml-schema-definition-files/)
+2. [SCORM 1.2 API Wrapper](https://raw.githubusercontent.com/abhi9bakshi/scorm-hands-on/master/chapters/Chapter%203/Lesson%201/SCORM_12_APIWrapper.js)
+3. [The evolution of Pikachu demo course](https://github.com/abhi9bakshi/scorm-hands-on/raw/master/chapters/Chapter%203/Lesson%201/the_evolution_of_pikachu.zip)
 
 Download and extract these files in a folder.
