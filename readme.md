@@ -577,5 +577,50 @@ Provided by Rustici Software - www.scorm.com.
 ```
 
 
-###lesson 4: Initialize and Finish a Session
+###Lesson 4: Initialize and Finish a Session
 
+Before we add any code to comunicate with the LMS, let's source the `scorm.js` file in `index.html`. To do that, open `scorm_rte/index.html` in a text editor, and add 
+```html
+<script src="scripts/SCORM_12_APIWrapper.js"></script>
+<script src="scripts/scorm.js"></script>
+```
+below above line 7.
+
+
+Now, let's open `scorm.js` file located at `scorm_rte/scripts/`. Inside that file, paste the following code:
+
+```javascript
+function initializeLMS(){
+	var initSuccess = doLMSInitialize();
+	console.log(initSuccess);
+}
+
+function finishLMS(){
+	var finSuccess = doLMSFinish();
+	console.log(finSuccess);
+}
+```
+
+Now, you need to call these functions as needed. Open `common.js` file located at `scorm_rte/scripts`. Inside that file, add the following line
+```javascript
+initializeLMS();
+```
+below line 5. Also, add a function
+```
+window.onunload = function() {
+  finishLMS();
+}
+```
+below `window.onload` function. Finally, modify your `exit` function to look like this:
+```javascript
+function exit(){
+  finishLMS();
+  alert("Bye!");
+}
+```
+
+Thus you just created a SCORM compatible course which can run on any SCORM 1.2 compatible LMS. Now, package this course as a zip file using any file compression utility.
+
+**Note:** When packaging the course, always remember to keep `imamanifest.xml` file at the root directory, otherwise that course will not work on any LMS.
+
+Upload it to the moodle setup we did in Chapter 1, and voila... it runs perfectly fine. You can check if it encountered any errors by referring to _Web Inspector -> Console_ or equivalent of your preferred browser. 
