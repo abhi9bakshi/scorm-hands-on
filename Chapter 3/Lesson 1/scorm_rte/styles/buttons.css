@@ -1,9 +1,0 @@
-.buttons{ background:url("../assets/sprites/buttons.png") top left no-repeat; border: 0;}
-
-.exit{ width:32px; height:32px; background-position:-10px -178px; position: absolute; top: 14px; right: 14px; }
-.previous{ width:32px; height:32px;  background-position:-10px -220px; position: absolute; bottom: 14px; left: 24px; }
-.next{ width:32px; height:32px; background-position:-10px -262px; position: absolute; bottom: 14px; left: 74px;}
-
-.exit:hover{ width:46px; height:46px; background-position:-10px -10px; top: 7px; right: 7px;}
-.previous:hover{ width:46px; height:46px; background-position:-10px -66px; bottom: 7px; left: 17px; }
-.next:hover{ width:46px; height:46px; background-position:-10px -122px; bottom: 7px; left: 67px;}
