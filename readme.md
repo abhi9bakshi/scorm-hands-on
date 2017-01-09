@@ -632,3 +632,27 @@ Now that we are done with a basic SCORM course, let's do something interesting. 
 
 1. Set grade based on pages visited
 2. Bookmark the last visited page
+
+To complete first objective, my logical sequence of steps for solution are 
+```
+1. Define an array "visited" whose length will be equal to mKey length, where mKey tracks each module.
+2. For every page visited, mark that index of "visited" array to true.
+3. When user exits course, compute score by formula
+	visitedCount/mKey.length * 100
+4. Save that to LMS by setting "cmi.core.score.raw" value to that score.
+```
+
+You can use the same approach or devise your own solution. 
+
+Second objective is relatively easy, and we have already seen it in Golf course in Chapter 1. Logical sequence of steps for achieving this are:
+```
+1. When user exits a course, set "cmi.core.lesson_location" value as the page from which the user left.
+2. When user resumes a course, fetch value of "cmi.core.lesson_location" from LMS and display that page. 
+```
+
+If you get stuck, you can refer **finished** version inside Chapter 3 Lesson 5. Once done, upload that course to your Moodle installation and relish the joy of seeing your first fully functional SCORM compatible course in action. 
+
+
+##Final Thoughts
+
+Now that you have a solid understanding of SCORM, you can venture in your own adventures making e-learning courses. I hope you enjoyed learning SCORM using this course as much as I enjoyed making this. If you have any queries or you are facing any problems with your e-learning solution, feel free to contact me at abhi9bakshi@gmail.com. If you are interested in e-learning solutions, please visit [www.zealium.com](www.zealium.com) to check out our existing e-learning solutions as well as to get a quote for your next e-learning solution.
