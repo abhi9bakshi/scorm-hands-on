@@ -624,3 +624,11 @@ Thus you just created a SCORM compatible course which can run on any SCORM 1.2 c
 **Note:** When packaging the course, always remember to keep `imamanifest.xml` file at the root directory, otherwise that course will not work on any LMS.
 
 Upload it to the moodle setup we did in Chapter 1, and voila... it runs perfectly fine. You can check if it encountered any errors by referring to _Web Inspector -> Console_ or equivalent of your preferred browser. 
+
+
+###Lesson 5: Scoring and Bookmarking
+
+Now that we are done with a basic SCORM course, let's do something interesting. I will be listing 2 objectives for this lesson.
+
+1. Set grade based on pages visited
+2. Bookmark the last visited page
