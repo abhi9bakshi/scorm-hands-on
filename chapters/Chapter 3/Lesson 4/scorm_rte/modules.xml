@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<course>
+	<title>The evolution of Pikachu</title>
+	<module>
+		<id>1</id>
+		<title>The evolution of Pikachu</title>
+		<url>modules/module1/module1.html</url>
+	</module>
+	<module>
+		<id>2</id>
+		<title>Stage 1 : Pichu</title>
+		<url>modules/module2/module2.html</url>
+	</module>
+	<module>
+		<id>3</id>
+		<title>Stage 2 : Pikachu</title>
+		<url>modules/module3/module3.html</url>
+	</module>
+	<module>
+		<id>4</id>
+		<title>Stage 3 : Raichu</title>
+		<url>modules/module4/module4.html</url>
+	</module>
+</course>

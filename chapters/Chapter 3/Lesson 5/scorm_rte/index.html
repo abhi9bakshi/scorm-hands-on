@@ -1,0 +1,35 @@
+<doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zealium - Run Time Environment</title>
+
+<script src="scripts/SCORM_12_APIWrapper.js"></script>
+<script src="scripts/scorm.js"></script>
+<script src="scripts/loadModule.js"></script>
+<script src="scripts/common.js"></script>
+
+<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen">
+<link rel="stylesheet" href="styles/buttons.css" type="text/css" media="screen">
+
+</head>
+
+<body>
+<!-- HEADER div for displaying module name -->
+<div id="header">
+	<p id="module_name">Zealium - Run Time Environment</p>
+	<input type="button" alt="exit" value="" class="buttons exit" id="btnExit" onclick="exit()">
+</div>
+
+<!-- FRAME for displaying course -->
+<iframe frameborder="0" border="0" framespacing="0" id="moduleViewer">
+	
+</iframe>
+
+<!-- FOOTER div for displaying navigation controls -->
+<div id="footer">
+	<input type="button" alt="previous" value="" class="buttons previous" id="btnPrevious" onclick="previous()">
+	<input type="button" alt="next" value="" class="buttons next" id="btnNext" onclick="next()">
+</div>
+
+</body>
