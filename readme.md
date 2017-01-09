@@ -470,7 +470,7 @@ In the next chapter, we will take a look at developing our first SCORM from (alm
 Up till now, we have been working on someone else's code, trying to get an understanding of how things work in SCORM. But now, things get real. You have to make a SCORM course and you are going to do that all by yourself. But, if you're going to do it, you better do it right, right? The good news is that it's not that difficult to make one given the amount of quality resources available on the internet. So, without further ado, let's get started.
 
 
-###Lesson 1: Setting up the content
+###Lesson 1: Laying the foundation
 
 ####Things you will need:
 
@@ -481,7 +481,44 @@ Up till now, we have been working on someone else's code, trying to get an under
 Download and extract these files in a folder. I assume that your folder structure is as follows:
 ```
 scorm_project
-├─ scorm_xml_schema_definition.zip
-├─ the_evolution_of_pikachu.zip
+├─ scorm_xml_schema_definition
+├─ the_evolution_of_pikachu
 └─ SCORM_12_APIWrapper.js
+```
+
+Now, if you open `the_evolution_of_pikachu`, you will see that all that file contains is pure HTML, CSS and Javascript for styling and behaviour. You can see a working Run-time environment by opening `the_evolution_of_pikachu/scorm_rte/index.html` file. It's very basic but it does the job for this tutorial. You can also see that we haven't used any SCORM calls here yet. So, this course can function standalone but it won't work in an LMS.
+
+The point of setting this structure is to emphasize that a SCORM course is not tightly coupled, it consists of three loosely coupled components, viz.
+
+1. The Module
+2. The Run-Time Environment
+3. The SCORM wrapper
+
+So, let's integrate these components to set up a SCORM compliant course.
+
+
+###Lesson 2: Setting things up
+
+Open your `scorm_project` directory. Go to `scorm_xml_schema_definition` folder and move all it's contents inside `the_evolution_of_pikachu` folder. Now, move `SCORM_12_APIWrapper.js` inside `the_evolution_of_pikachu/scorm_rte/scripts` folder. Inside the same folder, i.e. `the_evolution_of_pikachu/scorm_rte/scripts`, create an empty file called `scorm.js`.
+
+So now, your folder structure should look like this:
+```
+scorm_project
+└─ the_evolution_of_pikachu
+    ├─ modules
+    ├─ scorm_rte
+    |    ├─ assets
+    |    ├─ scripts
+    |    |    ├─ common.js
+    |    |    ├─ loadModule.js
+    |    |    ├─ scorm.js
+    |    |    └─ SCORM_12_APIWrapper.js
+    |    ├─ styles
+    |    ├─ index.html
+    |    └─ modules.xml
+    ├─ adlcp_rootv1p2.xsd
+    ├─ ims_xml.xsd
+    ├─ imscp_rootv1p1p2.xsd
+    ├─ imsmanifest.xml
+    └─ imsmd_rootv1p2p1.xsd
 ```
